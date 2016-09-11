@@ -1,0 +1,12 @@
+declare @path char(100)
+declare @timeStamp datetime
+declare @dateTime varchar(50)
+select @timeStamp = convert(datetime, getdate(), 100)
+select @dateTime = @timeStamp
+select @dateTime = str_replace(@dateTime,":","_")
+select @dateTime = str_replace(@dateTime,"  ","-")
+select @dateTime = str_replace(@dateTime," ","_")
+select @dateTime = rtrim(@dateTime)
+set @path ="syb_tsm::<SID>_Backup_"+@dateTime
+dump database <SID> to @path with compression=101 
+go >> <log file location>
