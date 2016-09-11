@@ -1,4 +1,4 @@
-# SAP_TR_Automation
+# SAP Sybase backup automation
 
  This is a windows and sybase script for taking backup of your Sybase DB, this script takes your DB backup in TSM (Tivoli server manager) tapes.
 
